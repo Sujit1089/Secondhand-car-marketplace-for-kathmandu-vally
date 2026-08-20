@@ -1,0 +1,29 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#17255A', 'primaryTextColor': '#FBFAF7', 'primaryBorderColor': '#17255A', 'lineColor': '#B23A48', 'secondaryColor': '#F1EEE7', 'tertiaryColor': '#FBFAF7', 'fontSize': '14px'}}}%%
+graph TB
+    subgraph PROBLEM["CURRENT PLATFORMS: SECURITY FAILURES"]
+        direction TB
+        S["Seller posts car<br/>with phone number"] --> P["Phone number<br/>displayed publicly"]
+        P --> SC["Automated scraper<br/>harvests number"]
+        P --> SP["Buyer calls directly<br/>off-platform"]
+        SC --> F["Spam, phishing,<br/>data resale"]
+        SP --> FR["Advance payment scam<br/>no identity, no evidence"]
+    end
+
+    subgraph SOLUTION["SIRJANA AUTO: ARCHITECTURAL FIXES"]
+        direction TB
+        S2["Seller verifies<br/>identity + bluebook"] --> L["Listing published<br/>NO phone number"]
+        L --> E["Buyer sends encrypted<br/>message through platform"]
+        E --> M["Seller responds<br/>E2E encrypted"]
+        L --> V["Admin checks<br/>documents before listing"]
+    end
+
+    style PROBLEM fill:#FEE2E2,stroke:#B23A48,stroke-width:2px,color:#17255A
+    style SOLUTION fill:#D1FAE5,stroke:#1F7A5C,stroke-width:2px,color:#17255A
+    style SC fill:#FEE2E2,stroke:#B23A48,color:#17255A
+    style SP fill:#FEE2E2,stroke:#B23A48,color:#17255A
+    style F fill:#FEE2E2,stroke:#B23A48,color:#17255A
+    style FR fill:#FEE2E2,stroke:#B23A48,color:#17255A
+    style L fill:#D1FAE5,stroke:#1F7A5C,color:#17255A
+    style E fill:#D1FAE5,stroke:#1F7A5C,color:#17255A
+    style M fill:#D1FAE5,stroke:#1F7A5C,color:#17255A
+    style V fill:#D1FAE5,stroke:#1F7A5C,color:#17255A

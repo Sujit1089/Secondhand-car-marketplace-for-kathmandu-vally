@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Problem vs Solution</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<style>
+  body { font-family: 'Segoe UI', sans-serif; background: #fff; display: flex; justify-content: center; padding: 40px; }
+  .mermaid { max-width: 900px; }
+</style>
+</head>
+<body>
+<div class="mermaid">
+graph TB
+    subgraph PROBLEM["CURRENT PLATFORMS: SECURITY FAILURES"]
+        direction TB
+        S["Seller posts car with phone number"] --> P["Phone number displayed publicly"]
+        P --> SC["Automated scraper harvests number"]
+        P --> SP["Buyer calls directly off-platform"]
+        SC --> F["Spam, phishing, data resale"]
+        SP --> FR["Advance payment scam — no identity, no evidence"]
+    end
+
+    subgraph SOLUTION["SIRJANA AUTO: ARCHITECTURAL FIXES"]
+        direction TB
+        S2["Seller verifies identity + bluebook"] --> L["Listing published — NO phone number"]
+        L --> E["Buyer sends encrypted message"]
+        E --> M["Seller responds — E2E encrypted"]
+        L --> V["Admin checks documents before listing"]
+    end
+
+    style PROBLEM fill:#FEE2E2,stroke:#B23A48,stroke-width:2px,color:#17255A
+    style SOLUTION fill:#D1FAE5,stroke:#1F7A5C,stroke-width:2px,color:#17255A
+</div>
+<script>mermaid.initialize({startOnLoad:true, theme:'base', themeVariables:{primaryColor:'#17255A',primaryTextColor:'#FBFAF7',lineColor:'#B23A48',fontSize:'14px'}});</script>
+</body>
+</html>
